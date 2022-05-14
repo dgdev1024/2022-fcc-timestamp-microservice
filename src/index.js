@@ -11,13 +11,6 @@ const app = express();
 // Serve public folder...
 app.use("/public", express.static(path.join(__dirname, "public")));
 
-// GET /
-//
-// Serves the index.html page.
-app.get("/", (_, res) =>
-  res.status(200).sendFile(path.join(__dirname, "pages", "index.html"))
-);
-
 // GET /api/:date
 //
 // Parses the date string given by the :date URL parameter and returns that date's
@@ -46,6 +39,13 @@ app.get("/api/:date?", (req, res) => {
     utc: parsedDate.toUTCString(),
   });
 });
+
+// GET /
+//
+// Serves the index.html page.
+app.get("/", (_, res) =>
+  res.status(200).sendFile(path.join(__dirname, "pages", "index.html"))
+);
 
 // Listen on port 3000 or port specified by environment variable.
 const port = process.env.PORT || 3000;
