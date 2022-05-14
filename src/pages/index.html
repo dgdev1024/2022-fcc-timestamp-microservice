@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/style.css" />
+    <title>FCC Project | Timestamp Microservice</title>
+  </head>
+  <body>
+    <header class="header"></header>
+    <main class="main">
+      <div class="container">
+        <h1 class="main__heading">Timestamp Microservice</h1>
+        <p class="main__text">
+          Takes a date string and returns the parsed date's UNIX and UTC
+          timestamp representations.
+        </p>
+        <h2 class="main__heading">Try it out!</h2>
+        <div class="main__card-strip">
+          <div class="main__card">
+            <h3 class="main__heading main__heading--small">Today's Date</h3>
+            <p class="main__text">
+              Show today's date, <span class="main__todays-date">...</span>
+            </p>
+            <a href="/api" class="main__button">Run <code>/api</code></a>
+          </div>
+          <div class="main__card">
+            <h3 class="main__heading main__heading--small">Natural Date</h3>
+            <p class="main__text">
+              Pass in a naturally-read date, like "May 14 2022".
+            </p>
+            <a href="/api/May%2014%202022" class="main__button"
+              >Run <code>/api/May%2014%202022</code></a
+            >
+          </div>
+          <div class="main__card">
+            <h3 class="main__heading main__heading--small">UNIX Timestamp</h3>
+            <p class="main__text">
+              Pass in a number representing a date's UNIX timestamp, like
+              1652500800000 for May 14th, 2022.
+            </p>
+            <a href="/api/1652500800000" class="main__button"
+              >Run <code>/api/1652500800000</code></a
+            >
+          </div>
+          <div class="main__card">
+            <h3 class="main__heading main__heading--small">Try It Yourself</h3>
+            <p class="main__text">
+              In the address bar, at the end of the address, type in '/api/',
+              and then a string or number that can be parsed as a JavaScript
+              <code>Date</code> object.
+            </p>
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date"
+              target="_blank"
+              class="main__button"
+            >
+              More on <code>Date</code>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">
+        Coded by
+        <a href="https://dgdev1024.com" target="_blank" class="footer__link"
+          >Dennis Griffin</a
+        >
+      </p>
+    </footer>
+    <script>
+      const todaysDate = document.querySelector(".main__todays-date");
+
+      todaysDate.innerHTML = new Date().toDateString();
+    </script>
+  </body>
+</html>
